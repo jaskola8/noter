@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{%  block body %}
+    {% from "_formhelpers.html" import render_field %}
+    <form method=post>
+        {{ form.csrf_token }}
+        <p>Are sure you want to delete note?</p>
+        <input type=submit value="Confirm">
+    </form>
+{% endblock %}

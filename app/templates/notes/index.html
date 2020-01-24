@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{%  block body %}
+    <h1>Welcome</h1>
+    <ul>
+        <li><a href="{{ url_for('notes.new_note') }}">New note</a></li>
+        <li><a href="{{ url_for('notes.owned_notes') }}">Owned notes</a></li>
+        <li><a href="{{ url_for('notes.shared_notes') }}">Notes shared with you</a></li>
+        <li><a href="{{ url_for('notes.public_notes') }}">Public notes</a></li>
+        <li><a href="{{ url_for('auth.pass_change') }}">Change password</a></li>
+    </ul>
+{% endblock %}

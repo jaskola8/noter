@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{%  block body %}
+    <ul>
+        <li>Title: {{ note.title }}</li>
+        <li>Content: <p>{{ note.content }}</p></li>
+        <li>Is public: {{ note.is_public }}</li>
+        <li>Owner: {{ owner.username }}</li>
+        {%  if access == "write" %}
+                    <a href="{{ url_for('notes.edit_note', note_id=note.id) }}">Edit</a>
+                    <a href="{{ url_for('notes.delete_note', note_id=note.id) }}">Delete</a>
+        {% endif %}
+    </ul>
+{% endblock %}

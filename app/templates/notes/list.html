@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{%  block body %}
+    <ul>
+        {% for note in notes %}
+            <li>
+                <label>{{ note.title }}</label>
+                <a href="{{ url_for('notes.show_note', note_id=note.id) }}">Show</a>
+                {%  if access == "write" %}
+                    <a href="{{ url_for('notes.edit_note', note_id=note.id) }}">Edit</a>
+                    <a href="{{ url_for('notes.delete_note', note_id=note.id) }}">Delete</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
